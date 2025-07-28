@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Typography */
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.6;
+  --font-weight-base: 400;
+  --font-weight-bold: 600;
+
+  /* Colors (Light Mode Default) */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --background: #ffffff;
+  --surface: #f9fafb;
+  --link: #3b82f6;
+  --link-hover: #2563eb;
+  --button-bg: #f3f4f6;
+  --button-text: #111827;
+
+  /* Border & Radius */
+  --radius: 8px;
+  --border-color: #e5e7eb;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --background: #1f2937;
+    --surface: #2d3748;
+    --link: #60a5fa;
+    --link-hover: #3b82f6;
+    --button-bg: #374151;
+    --button-text: #f9fafb;
+    --border-color: #4b5563;
+  }
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight-base);
+  background-color: var(--background);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+button:hover {
+  border-color: var(--link);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--link-hover);
+  outline-offset: 2px;
+}

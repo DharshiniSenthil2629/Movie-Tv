@@ -1,0 +1,124 @@
+.content-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Grid - 4 items per row on large screens */
+.content-grid.movies,
+.content-grid.tv-shows {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.content-item {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 2/3;
+}
+
+.content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: opacity 0.3s ease;
+}
+
+.content-item:hover .content-poster {
+  opacity: 0.9;
+}
+
+.content-info {
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.content-item:hover .content-info {
+  transform: translateY(0);
+}
+
+.content-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-type {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.content-rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #ffd700;
+}
+
+.content-rating::before {
+  content: '★';
+  margin-right: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .content-grid.movies,
+  .content-grid.tv-shows {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .content-grid.movies,
+  .content-grid.tv-shows {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-grid.movies,
+  .content-grid.tv-shows {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 20px;
+} 

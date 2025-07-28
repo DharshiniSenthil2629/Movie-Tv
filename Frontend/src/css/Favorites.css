@@ -1,0 +1,51 @@
+.favorites {
+  padding: var(--space-lg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorites h2 {
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  margin: var(--space-lg) auto;
+  max-width: 600px;
+  box-shadow: var(--shadow-sm);
+}
+
+.favorites-empty h2 {
+  margin-bottom: var(--space-sm);
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.favorites-empty p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.4s ease-out forwards;
+}
