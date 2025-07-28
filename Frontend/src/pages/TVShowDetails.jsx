@@ -32,7 +32,7 @@ export default function TVShowDetails() {
   useEffect(() => {
     const fetchShowDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/movies/tv/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movies/tv/${id}`);
         setShow(response.data);
         setError(null);
       } catch (err) {

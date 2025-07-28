@@ -6,7 +6,7 @@ const TV = () => {
   return (
     <div className="content-page">
       <h1>Popular TV Shows</h1>
-      <ContentGrid fetchUrl="http://localhost:5000/api/movies/popular/tv" mediaType="tv" />
+      <ContentGrid fetchUrl={`${import.meta.env.VITE_API_URL}/api/movies/popular/tv`} mediaType="tv" />
     </div>
   );
 };

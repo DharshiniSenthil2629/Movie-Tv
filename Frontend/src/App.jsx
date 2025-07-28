@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider } from './contexts/AuthContext';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import Home from "./pages/Home";
 import Movies from './pages/Movies';
 import TVShows from './pages/TVShows';

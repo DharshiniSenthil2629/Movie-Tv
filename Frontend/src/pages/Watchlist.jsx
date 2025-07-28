@@ -37,7 +37,7 @@ export default function Watchlist() {
           throw new Error('Authentication required');
         }
         
-        const response = await axios.get('http://localhost:5000/api/watchlist', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/watchlist`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -72,7 +72,7 @@ export default function Watchlist() {
         throw new Error('Authentication required');
       }
 
-      await axios.delete(`http://localhost:5000/api/watchlist/${movieId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/watchlist/${movieId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

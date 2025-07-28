@@ -22,7 +22,7 @@ export function WatchlistProvider({ children }) {
 
   const fetchWatchlist = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/watchlist', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/watchlist`, {
         headers: {
           Authorization: `Bearer ${user.token}`
         }
@@ -36,7 +36,7 @@ export function WatchlistProvider({ children }) {
   const addToWatchlist = async (item) => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/watchlist',
+        `${import.meta.env.VITE_API_URL}/api/watchlist`,
         item,
         {
           headers: {
@@ -52,7 +52,7 @@ export function WatchlistProvider({ children }) {
 
   const removeFromWatchlist = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/watchlist/${itemId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/watchlist/${itemId}`, {
         headers: {
           Authorization: `Bearer ${user.token}`
         }

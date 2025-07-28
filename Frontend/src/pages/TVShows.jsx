@@ -19,7 +19,7 @@ export default function TVShows() {
   const { data, isLoading, error } = useQuery(
     ['tvShows', page],
     async () => {
-      const response = await axios.get(`http://localhost:5000/api/movies/tv/popular?page=${page}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movies/tv/popular?page=${page}`);
       return response.data;
     },
     {
@@ -57,7 +57,7 @@ export default function TVShows() {
         Popular TV Shows
       </Typography>
       <ContentGrid 
-        fetchUrl={`http://localhost:5000/api/movies/tv/popular?page=${page}`} 
+        fetchUrl={`${import.meta.env.VITE_API_URL}/api/movies/tv/popular?page=${page}`} 
         mediaType="tv" 
       />
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 4 }}>

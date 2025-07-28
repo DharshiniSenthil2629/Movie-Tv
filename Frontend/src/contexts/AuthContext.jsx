@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
       
       if (token && userId) {
         try {
-          const response = await axios.get('http://localhost:5000/api/users/verify', {
+          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/verify`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser({ ...response.data, token });
@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       console.log('Attempting login for:', email);
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
         email: email.toLowerCase().trim(),
         password
       });
@@ -64,7 +64,7 @@ export function AuthProvider({ children }) {
   const register = async (username, email, password) => {
     try {
       console.log('Attempting registration for:', email);
-      const response = await axios.post('http://localhost:5000/api/users/register', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, {
         username: username.trim(),
         email: email.toLowerCase().trim(),
         password

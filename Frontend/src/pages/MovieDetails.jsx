@@ -26,7 +26,7 @@ export default function MovieDetails({ type }) {
 
   const { data: details, isLoading, isError, error } = useQuery(['details', type, id], async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/movies/details/${type}/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movies/details/${type}/${id}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching movie details:', error);

@@ -14,7 +14,7 @@ const Profile = () => {
       try {
         setLoading(true);
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/users/profile', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -36,7 +36,7 @@ const Profile = () => {
   const removeFromWatchlist = async (movieId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/users/watchlist/${movieId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/watchlist/${movieId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
