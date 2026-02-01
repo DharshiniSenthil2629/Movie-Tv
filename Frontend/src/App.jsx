@@ -17,6 +17,8 @@ import TVShowDetails from './pages/TVShowDetails';
 import Watchlist from './pages/Watchlist';
 import { WatchlistProvider } from './contexts/WatchlistContext';
 import SearchResults from './pages/SearchResults';
+import NavBar from './components/NavBar';
+
 
 const theme = createTheme({
   palette: {

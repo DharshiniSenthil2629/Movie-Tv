@@ -21,7 +21,7 @@ const Login = () => {
     setError('');
     try {
       await login(formData.email, formData.password);
-      navigate('/');
+      navigate('/movies');
     } catch (err) {
       setError(err.message);
     }

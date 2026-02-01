@@ -103,8 +103,8 @@ export default function Register() {
       });
       
       await register(formData.username, formData.email, formData.password);
-      console.log('Registration successful, redirecting to home...');
-      navigate('/');
+      console.log('Registration successful, redirecting to movies...');
+      navigate('/movies');
     } catch (err) {
       console.error('Registration error:', err.message);
       
